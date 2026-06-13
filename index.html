@@ -213,8 +213,8 @@ footer{background:#fff;border-top:1px solid rgba(212,160,76,.2);padding:3.4rem 0
 
 /* ---------- dropdown menu ---------- */
 .dropdown-wrap{position:relative}
-.dropdown-wrap:hover .dropdown-menu{display:grid!important}
-.dropdown-menu{position:absolute;top:28px;left:-20px;min-width:750px;background:#fff;border:1px solid rgba(166,9,61,.15);border-radius:12px;box-shadow:0 12px 48px rgba(166,9,61,.15);padding:1.2rem;display:none!important;grid-template-columns:1fr 1fr 1fr;gap:1.4rem;z-index:100}
+.dropdown-wrap:hover .dropdown-menu{opacity:1!important;visibility:visible!important;pointer-events:auto!important;display:grid!important}
+.dropdown-menu{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s ease,visibility .3s ease}
 .dropdown-menu a{padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;display:block;margin-bottom:.2rem;transition:.2s}
 .dropdown-menu a:hover{background:var(--blush-soft);color:var(--crimson)}
 
@@ -332,37 +332,37 @@ footer{background:#fff;border-top:1px solid rgba(212,160,76,.2);padding:3.4rem 0
       <a href="about.html" style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">About</a>
       
       <!-- REGISTRATION MEGA DROPDOWN -->
-      <div class="dropdown-wrap" style="position:relative;cursor:pointer" onmouseleave="closeDropdown()">
-        <a href="#" onmouseover="openDropdown()" onclick="return false" style="color:var(--crimson);white-space:nowrap;text-decoration:none;font-weight:600;transition:.25s">Registration ▼</a>
-        <div class="dropdown-menu" onmouseover="openDropdown()" onmouseleave="closeDropdown()" style="position:absolute;top:28px;left:-20px;min-width:750px;background:#fff;border:1px solid rgba(166,9,61,.15);border-radius:12px;box-shadow:0 12px 48px rgba(166,9,61,.15);padding:1.2rem;display:none;grid-template-columns:1fr 1fr 1fr;gap:1.4rem;z-index:100">
+      <div class="dropdown-wrap" style="position:relative;cursor:pointer">
+        <a href="#" onclick="return false" style="color:var(--crimson);white-space:nowrap;text-decoration:none;font-weight:600;transition:.25s;cursor:pointer">Registration ▼</a>
+        <div class="dropdown-menu" style="position:absolute;top:28px;left:-20px;min-width:750px;background:#fff;border:1px solid rgba(166,9,61,.15);border-radius:12px;box-shadow:0 12px 48px rgba(166,9,61,.15);padding:1.2rem;grid-template-columns:1fr 1fr 1fr;gap:1.4rem;z-index:100;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;pointer-events:none">
           
           <!-- COL 1 -->
           <div>
             <b style="color:var(--crimson);display:block;margin-bottom:.6rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--gold);padding-bottom:.4rem">Beauty Pageants</b>
-            <a href="#" onclick="openFormWithCat(event,'miss-india')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Forever Miss India 2026</a>
-            <a href="#" onclick="openFormWithCat(event,'mrs-india')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Forever Mrs India 2026</a>
-            <a href="#" onclick="openFormWithCat(event,'miss-teen')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Miss Teen India 2026</a>
-            <a href="#" onclick="openFormWithCat(event,'kids')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Star Kids Contest 2026</a>
-            <a href="#" onclick="openFormWithCat(event,'intl')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;transition:.2s">Miss/Mrs Universe 2026</a>
+            <a href="#" onclick="openFormWithCat(event,'miss-india')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s;cursor:pointer">Forever Miss India 2026</a>
+            <a href="#" onclick="openFormWithCat(event,'mrs-india')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s;cursor:pointer">Forever Mrs India 2026</a>
+            <a href="#" onclick="openFormWithCat(event,'miss-teen')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s;cursor:pointer">Miss Teen India 2026</a>
+            <a href="#" onclick="openFormWithCat(event,'kids')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s;cursor:pointer">Star Kids Contest 2026</a>
+            <a href="#" onclick="openFormWithCat(event,'intl')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;transition:.2s;cursor:pointer">Miss/Mrs Universe 2026</a>
           </div>
 
           <!-- COL 2 -->
           <div>
             <b style="color:var(--crimson);display:block;margin-bottom:.6rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--gold);padding-bottom:.4rem">Awards 2026</b>
-            <a href="#" onclick="openFormWithCat(event,'super-woman')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Super Woman Award</a>
-            <a href="#" onclick="openFormWithCat(event,'super-hero')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Super Hero Award</a>
-            <a href="#" onclick="openFormWithCat(event,'business')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Business Awards</a>
-            <a href="#" onclick="openFormWithCat(event,'iconic')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Iconic Award</a>
-            <a href="#" onclick="openFormWithCat(event,'bharat')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;transition:.2s">Bharat Ratan Samman</a>
+            <a href="#" onclick="openFormWithCat(event,'super-woman')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s;cursor:pointer">Super Woman Award</a>
+            <a href="#" onclick="openFormWithCat(event,'super-hero')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s;cursor:pointer">Super Hero Award</a>
+            <a href="#" onclick="openFormWithCat(event,'business')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s;cursor:pointer">Business Awards</a>
+            <a href="#" onclick="openFormWithCat(event,'iconic')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s;cursor:pointer">Iconic Award</a>
+            <a href="#" onclick="openFormWithCat(event,'bharat')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;transition:.2s;cursor:pointer">Bharat Ratan Samman</a>
           </div>
 
           <!-- COL 3 -->
           <div>
             <b style="color:var(--crimson);display:block;margin-bottom:.6rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--gold);padding-bottom:.4rem">Professional & Other</b>
-            <a href="#" onclick="openFormWithCat(event,'designer')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Fashion Designers 2026</a>
-            <a href="#" onclick="openFormWithCat(event,'makeup')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Makeup Artist 2026</a>
-            <a href="partner.html" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Channel Partner</a>
-            <a href="#" onclick="openFormWithCat(event,'nominate')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;transition:.2s">Nominate for Award</a>
+            <a href="#" onclick="openFormWithCat(event,'designer')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s;cursor:pointer">Fashion Designers 2026</a>
+            <a href="#" onclick="openFormWithCat(event,'makeup')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s;cursor:pointer">Makeup Artist 2026</a>
+            <a href="partner.html" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s;cursor:pointer">Channel Partner</a>
+            <a href="#" onclick="openFormWithCat(event,'nominate')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;transition:.2s;cursor:pointer">Nominate for Award</a>
           </div>
         </div>
       </div>
