@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Payment – Forever Star India</title>
+<meta name="description" content="Complete your FSIA registration with secure payment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FFFCF6;--gold:#D4AF37;--gold-deep:#B8962E;--crimson:#A6093D;--crimson-deep:#7E0B30;--blush:#F2C4CF;--blush-soft:#FCEFF2;--champagne:#F8EDD8;--ink:#3A2226;--ink-soft:#7A5E63;--shadow:0 10px 30px rgba(166,9,61,.10);--radius:20px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--ivory);color:var(--ink);line-height:1.65;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
+.container{width:min(1140px,92%);margin:0 auto}
+header{position:sticky;top:0;z-index:60;background:rgba(255,252,246,.93);backdrop-filter:blur(12px);border-bottom:1px solid rgba(166,9,61,.14);padding:.7rem 0}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:.65rem;font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700}
+.logo img{width:40px;height:40px;object-fit:contain;border-radius:50%;background:#fff;box-shadow:0 4px 12px rgba(166,9,61,.18)}
+.logo span{color:var(--crimson)}
+.logo small{display:block;font-family:'Poppins',sans-serif;font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+.progress{display:flex;gap:.6rem;align-items:center;font-size:.82rem;font-weight:600;color:var(--ink-soft)}
+.progress .dot{width:28px;height:28px;border-radius:50%;background:var(--blush-soft);border:2px solid var(--ink-soft);display:flex;align-items:center;justify-content:center;font-size:.72rem;transition:.25s}
+.progress .dot.done{background:linear-gradient(135deg,var(--crimson),var(--gold-deep));color:#fff;border-color:transparent}
+.progress .dot.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.progress span{display:none}
+@media(min-width:640px){.progress span{display:inline}}
+
+main{padding:3.2rem 0 4rem}
+.wrapper{display:grid;grid-template-columns:1.2fr 1fr;gap:2.4rem;align-items:start}
+.order-summary{background:#fff;border:1px solid rgba(166,9,61,.1);border-radius:var(--radius);padding:2rem 1.8rem;box-shadow:var(--shadow);position:sticky;top:100px}
+.os-title{font-family:'Playfair Display',serif;font-size:1.25rem;margin-bottom:1.4rem;padding-bottom:.8rem;border-bottom:1px dashed rgba(166,9,61,.2)}
+.os-item{display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:.9rem;padding-bottom:.6rem;border-bottom:1px solid rgba(166,9,61,.08)}
+.os-item b{color:var(--crimson)}
+.os-total{display:flex;justify-content:space-between;font-size:1.15rem;font-weight:700;color:var(--crimson);margin-top:1.4rem;padding-top:1rem;border-top:2px solid var(--gold)}
+.form-card{background:#fff;border:1px solid rgba(166,9,61,.1);border-radius:var(--radius);padding:2rem 1.8rem;box-shadow:var(--shadow)}
+.form-title{font-family:'Playfair Display',serif;font-size:1.35rem;margin-bottom:1.4rem}
+.methods{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem}
+.method{border:2px solid rgba(166,9,61,.2);border-radius:16px;padding:1.1rem 1rem;cursor:pointer;transition:.25s;text-align:center;font-weight:500;font-size:.9rem}
+.method:hover{border-color:var(--crimson);background:var(--blush-soft)}
+.method.selected{border-color:var(--crimson);background:linear-gradient(135deg,rgba(166,9,61,.08),rgba(212,175,55,.08));color:var(--crimson)}
+.method i{display:block;font-size:1.8rem;margin-bottom:.4rem;font-style:normal}
+.field{margin-bottom:1.3rem}
+.field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.5rem}
+.field input{width:100%;padding:.85rem 1rem;border:1.5px solid rgba(166,9,61,.18);border-radius:12px;font-family:'Poppins',sans-serif;font-size:.9rem;background:#fff;color:var(--ink);transition:border .25s}
+.field input:focus{outline:none;border-color:var(--crimson)}
+.field.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;justify-content:center;background:linear-gradient(120deg,var(--crimson) 0%,var(--crimson-deep) 45%,var(--gold-deep) 130%);background-size:180% 100%;color:#fff;font-weight:600;font-size:.95rem;padding:.9rem 2rem;border-radius:999px;border:none;cursor:pointer;box-shadow:0 8px 22px rgba(166,9,61,.32);transition:transform .25s,background-position .4s;width:100%}
+.btn:hover{transform:translateY(-2px);background-position:100% 0}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+.note{font-size:.78rem;color:var(--ink-soft);margin-top:1rem;text-align:center}
+.secure{display:flex;align-items:center;justify-content:center;gap:.4rem;font-size:.76rem;color:var(--gold-deep);margin-bottom:1.6rem}
+.secure i{font-style:normal}
+footer{background:#fff;border-top:1px solid rgba(166,9,61,.14);padding:2rem 0 1.2rem;margin-top:4rem;text-align:center}
+footer p{font-size:.78rem;color:var(--ink-soft)}
+@media(max-width:860px){.wrapper{grid-template-columns:1fr}.order-summary{position:static}}
+@media(max-width:640px){.methods{grid-template-columns:1fr}.field.row{grid-template-columns:1fr}header .progress span{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo">
+      <img src="https://www.fsia.in/static/media/logo.67ebf64be4454e93587d.gif" alt="FSIA">
+      <div>Forever <span>Star</span> India<small>FSIA</small></div>
+    </a>
+    <div class="progress">
+      <div class="dot done">✓</div><span>Registration</span>
+      <div class="dot active">2</div><span>Payment</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container wrapper">
+    <div>
+      <h1 style="font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:1rem">Complete Your <span style="color:var(--crimson)">Registration</span></h1>
+      <p style="color:var(--ink-soft);margin-bottom:2.2rem;font-size:.95rem">You're just one step away. Choose your payment method and complete the payment to secure your spot.</p>
+
+      <div class="form-card">
+        <h2 class="form-title">Payment Details</h2>
+        
+        <div class="secure">
+          <i>🔒</i> Your payment is secure and encrypted
+        </div>
+
+        <p style="font-size:.84rem;color:var(--ink-soft);margin-bottom:1.6rem">Select your preferred payment method:</p>
+        
+        <div class="methods" id="methodsGrid">
+          <div class="method selected" data-method="card" onclick="selectMethod(this,'card')">
+            <i>💳</i>
+            <span>Credit / Debit Card</span>
+          </div>
+          <div class="method" data-method="upi" onclick="selectMethod(this,'upi')">
+            <i>📱</i>
+            <span>UPI / BHIM</span>
+          </div>
+          <div class="method" data-method="wallet" onclick="selectMethod(this,'wallet')">
+            <i>💰</i>
+            <span>Digital Wallet</span>
+          </div>
+          <div class="method" data-method="bank" onclick="selectMethod(this,'bank')">
+            <i>🏦</i>
+            <span>Net Banking</span>
+          </div>
+        </div>
+
+        <div id="cardForm">
+          <div class="field">
+            <label>Cardholder Name</label>
+            <input type="text" placeholder="As shown on card">
+          </div>
+          <div class="field">
+            <label>Card Number</label>
+            <input type="text" placeholder="1234 5678 9012 3456" maxlength="19">
+          </div>
+          <div class="field row">
+            <div><label>Expiry Date</label><input type="text" placeholder="MM/YY" maxlength="5"></div>
+            <div><label>CVV</label><input type="text" placeholder="123" maxlength="4"></div>
+          </div>
+        </div>
+
+        <div id="upiForm" style="display:none">
+          <div class="field">
+            <label>UPI ID</label>
+            <input type="text" placeholder="yourname@bankname">
+          </div>
+          <p style="font-size:.82rem;color:var(--ink-soft);margin-bottom:1rem">A payment request will be sent to your UPI app.</p>
+        </div>
+
+        <div id="bankForm" style="display:none">
+          <p style="font-size:.84rem;color:var(--ink-soft);margin-bottom:1.2rem">You will be redirected to your bank's secure gateway to complete the payment.</p>
+        </div>
+
+        <button class="btn" onclick="processPayment()">Complete Payment</button>
+        
+        <p class="note">
+          ✓ Secure · ✓ Fast · ✓ Safe<br>
+          <small>Your details are never stored on our servers.</small>
+        </p>
+      </div>
+    </div>
+
+    <div class="order-summary">
+      <div class="os-title">Order Summary</div>
+      <div class="os-item">
+        <span>Category</span>
+        <b id="sumCategory">[Category Name]</b>
+      </div>
+      <div class="os-item">
+        <span>Participant Name</span>
+        <b id="sumName">[Name]</b>
+      </div>
+      <div class="os-item">
+        <span>City</span>
+        <b id="sumCity">[City]</b>
+      </div>
+      <div class="os-item">
+        <span>Registration Fee</span>
+        <b>₹2,999</b>
+      </div>
+      <div class="os-item">
+        <span>Processing Fee</span>
+        <b>₹0</b>
+      </div>
+      <div class="os-item" style="border:none">
+        <span>Taxes (GST)</span>
+        <b>Included</b>
+      </div>
+      <div class="os-total">
+        <span>Total Amount</span>
+        <span>₹2,999</span>
+      </div>
+
+      <div style="background:var(--blush-soft);border-radius:12px;padding:1rem;margin-top:1.6rem;font-size:.8rem;color:var(--ink-soft)">
+        ℹ️ <strong>What's Included:</strong><br>
+        • Lifetime FSIA membership<br>
+        • Grooming & training sessions<br>
+        • Media coverage & photoshoots<br>
+        • Google profile visibility
+      </div>
+
+      <a href="index.html" style="display:inline-block;margin-top:1.6rem;font-size:.82rem;color:var(--crimson);font-weight:600">← Back to Home</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 Forever Star India Pvt. Ltd. | <a href="#" style="color:var(--crimson)">Privacy Policy</a> · <a href="#" style="color:var(--crimson)">Terms &amp; Conditions</a></p>
+</footer>
+
+<script>
+let selectedMethod='card';
+
+// Get registration data from URL or sessionStorage
+const regData = JSON.parse(sessionStorage.getItem('fsiaReg') || '{"category":"Miss India 2026","name":"[Your Name]","city":"[City]"}');
+document.getElementById('sumCategory').textContent=regData.category;
+document.getElementById('sumName').textContent=regData.name;
+document.getElementById('sumCity').textContent=regData.city;
+
+function selectMethod(el,method){
+  document.querySelectorAll('.method').forEach(m=>m.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedMethod=method;
+  document.getElementById('cardForm').style.display=method==='card'?'':'none';
+  document.getElementById('upiForm').style.display=method==='upi'?'':'none';
+  document.getElementById('bankForm').style.display=(method==='bank')?'':'none';
+}
+
+function processPayment(){
+  const btn=event.target;
+  btn.disabled=true;
+  btn.textContent='Processing...';
+  
+  // Simulate payment processing
+  setTimeout(()=>{
+    // In real implementation: POST to your payment gateway
+    // For now: show success and redirect to payment success page
+    sessionStorage.setItem('fsiaPaymentDone',JSON.stringify({...regData,paymentId:'TXN'+Math.random().toString(36).substr(2,9).toUpperCase(),date:new Date().toISOString()}));
+    window.location.href='payment-success.html';
+  },2000);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Successful – Forever Star India</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FFFCF6;--crimson:#A6093D;--gold:#D4AF37;--ink:#3A2226;--ink-soft:#7A5E63}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:var(--ivory);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem}
+.container{max-width:520px;text-align:center;animation:popin .5s ease}
+@keyframes popin{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.checkmark{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--crimson),var(--gold));display:flex;align-items:center;justify-content:center;font-size:3.2rem;margin:0 auto 1.6rem;animation:popcheck .6s cubic-bezier(.68,-.55,.265,1.55)}
+@keyframes popcheck{from{transform:scale(0)}60%{transform:scale(1.15)}to{transform:scale(1)}}
+h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,2.4rem);margin-bottom:.5rem;color:var(--crimson)}
+.subtitle{color:var(--ink-soft);margin-bottom:2rem;font-size:.95rem}
+.info-box{background:#fff;border:1px solid rgba(166,9,61,.1);border-radius:20px;padding:1.8rem;margin:2rem 0;box-shadow:0 10px 30px rgba(166,9,61,.08);text-align:left}
+.info-row{display:flex;justify-content:space-between;padding:.7rem 0;border-bottom:1px solid rgba(166,9,61,.08);font-size:.9rem}
+.info-row:last-child{border:none}
+.info-row b{color:var(--crimson)}
+.next-steps{background:linear-gradient(120deg,rgba(166,9,61,.06),rgba(212,175,55,.06));border-left:3px solid var(--crimson);border-radius:12px;padding:1.3rem;margin:2rem 0;text-align:left;font-size:.85rem}
+.next-steps b{display:block;color:var(--crimson);margin-bottom:.7rem}
+.next-steps li{margin:.5rem 0;margin-left:1.4rem}
+.btn{display:inline-block;background:linear-gradient(120deg,var(--crimson),var(--gold) 160%);color:#fff;padding:1rem 2rem;border-radius:999px;text-decoration:none;font-weight:600;margin:.6rem .4rem 0;transition:.25s;border:none;cursor:pointer}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(166,9,61,.32)}
+.btn-secondary{background:transparent;border:1.5px solid var(--crimson);color:var(--crimson)}
+footer{margin-top:3rem;font-size:.78rem;color:var(--ink-soft)}
+.confetti{position:fixed;width:8px;height:12px;background:#D4AF37;animation:fall 3s linear forwards}
+@keyframes fall{to{transform:translateY(100vh) rotate(720deg);opacity:0}}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="checkmark">✓</div>
+  <h1>Payment Successful!</h1>
+  <p class="subtitle">Your registration is now complete. Welcome to FSIA! 🎉</p>
+
+  <div class="info-box">
+    <div class="info-row">
+      <span>Transaction ID</span>
+      <b id="txnId">TXN-2026-0001</b>
+    </div>
+    <div class="info-row">
+      <span>Category</span>
+      <b id="catInfo">Miss India 2026</b>
+    </div>
+    <div class="info-row">
+      <span>Name</span>
+      <b id="nameInfo">Your Name</b>
+    </div>
+    <div class="info-row">
+      <span>Amount Paid</span>
+      <b>₹2,999</b>
+    </div>
+    <div class="info-row">
+      <span>Date & Time</span>
+      <b id="dateInfo">Today</b>
+    </div>
+  </div>
+
+  <div class="next-steps">
+    <b>📋 What Happens Next:</b>
+    <ul style="list-style:none;padding:0">
+      <li>✓ Our team will contact you on WhatsApp within 24 hours</li>
+      <li>✓ You'll receive audition details & schedule</li>
+      <li>✓ Join our grooming sessions & training calls</li>
+      <li>✓ Get ready to shine on the stage! 🌟</li>
+    </ul>
+  </div>
+
+  <div style="background:var(--gold);background:rgba(212,175,55,.15);border-radius:12px;padding:1rem;margin:2rem 0;font-size:.85rem;color:var(--ink-soft)">
+    <b style="color:var(--crimson);display:block;margin-bottom:.5rem">✓ Benefits Activated</b>
+    Lifetime FSIA membership, grooming sessions, media coverage & Google visibility are now active on your profile.
+  </div>
+
+  <button class="btn" onclick="window.location.href='index.html'">← Back to Home</button>
+  <button class="btn btn-secondary" onclick="window.open('https://wa.me/919983286999','_blank')">💬 Chat on WhatsApp</button>
+
+  <footer>
+    <p>Receipt has been sent to your registered email</p>
+    <p style="margin-top:.5rem">© 2026 Forever Star India Pvt. Ltd.</p>
+  </footer>
+</div>
+
+<script>
+// Populate with saved payment data
+const paid=JSON.parse(sessionStorage.getItem('fsiaPaymentDone')||'{}');
+if(paid.date){
+  document.getElementById('txnId').textContent=paid.paymentId||'TXN-2026-0001';
+  document.getElementById('catInfo').textContent=paid.category;
+  document.getElementById('nameInfo').textContent=paid.name;
+  document.getElementById('dateInfo').textContent=new Date(paid.date).toLocaleDateString('en-IN',{year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'});
+}
+
+// Confetti
+for(let i=0;i<50;i++){
+  const c=document.createElement('div');
+  c.className='confetti';
+  c.style.left=Math.random()*100+'%';
+  c.style.top='-10px';
+  c.style.background=['#D4AF37','#A6093D','#F2C4CF','#B8962E'][Math.floor(Math.random()*4)];
+  c.style.animation='fall '+(2+Math.random()*1.5)+'s linear '+(Math.random()*.5)+'s forwards';
+  document.body.appendChild(c);
+  setTimeout(()=>c.remove(),4000);
+}
+</script>
+</body>
+</html>
