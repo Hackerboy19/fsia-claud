@@ -211,6 +211,13 @@ footer{background:#fff;border-top:1px solid rgba(212,160,76,.2);padding:3.4rem 0
 @keyframes fall{to{transform:translateY(105vh) rotate(720deg);opacity:.2}}
 .reassure{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;font-size:.72rem;color:var(--ink-soft);margin-top:1.4rem}
 
+/* ---------- dropdown menu ---------- */
+.dropdown-wrap{position:relative}
+.dropdown-wrap:hover .dropdown-menu{display:grid!important}
+.dropdown-menu{position:absolute;top:28px;left:-20px;min-width:750px;background:#fff;border:1px solid rgba(166,9,61,.15);border-radius:12px;box-shadow:0 12px 48px rgba(166,9,61,.15);padding:1.2rem;display:none!important;grid-template-columns:1fr 1fr 1fr;gap:1.4rem;z-index:100}
+.dropdown-menu a{padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;display:block;margin-bottom:.2rem;transition:.2s}
+.dropdown-menu a:hover{background:var(--blush-soft);color:var(--crimson)}
+
 /* ---------- scroll progress bar ---------- */
 .scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--crimson),var(--gold));z-index:90;transition:width .1s linear}
 
@@ -302,21 +309,74 @@ footer{background:#fff;border-top:1px solid rgba(212,160,76,.2);padding:3.4rem 0
   <button onclick="document.getElementById('announce').style.display='none'" aria-label="Close">✕</button>
 </div>
 
-<header>
-  <div class="container nav">
-    <a href="#" class="logo">
-      <img src="https://www.fsia.in/static/media/logo.67ebf64be4454e93587d.gif" alt="Forever Star India logo">
-      <div>Forever <span>Star</span> India<small>FSIA · Shine Like a Star</small></div>
+<header style="background:#fff;border-bottom:1px solid rgba(166,9,61,.12);padding:.6rem 0 0;position:sticky;top:0;z-index:60">
+  <!-- TOP INFO BAR -->
+  <div style="background:linear-gradient(90deg,var(--crimson-deep),var(--crimson) 70%);color:#fff;padding:.45rem 0;font-size:.73rem;border-bottom:1px solid rgba(212,175,55,.2)">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
+      <span style="font-weight:500">Registrations Open for Miss India 2026 & Mrs India 2026 - Limited Entries!</span>
+      <span>📞 <a href="tel:+919983286999" style="color:#fff;text-decoration:none;font-weight:600">+91-99832-86999</a> · ✉️ <a href="mailto:starindiaaward@gmail.com" style="color:#fff;text-decoration:none;font-weight:600">starindiaaward@gmail.com</a></span>
+    </div>
+  </div>
+
+  <!-- MAIN NAV BAR -->
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;padding:.5rem 0;gap:1.5rem;flex-wrap:wrap">
+    <!-- LOGO -->
+    <a href="index.html" style="display:flex;align-items:center;gap:.5rem;flex-shrink:0">
+      <img src="logo.gif" alt="Forever Star India" style="width:50px;height:50px;object-fit:contain">
+      <span style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--crimson)">Forever<br><span style="color:var(--ink);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase">Star India</span></span>
     </a>
-    <nav class="nav-links" id="navLinks">
-      <a href="events.html">Events</a>
-      <a href="about.html">About</a>
-      <a href="winners.html">Winners</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
+
+    <!-- MAIN NAVIGATION -->
+    <nav style="display:flex;gap:1.8rem;font-size:.85rem;font-weight:500;align-items:center;flex:1;overflow-x:auto;padding:0 1rem" id="navLinks">
+      <a href="index.html" style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">Home</a>
+      <a href="about.html" style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">About</a>
+      
+      <!-- REGISTRATION MEGA DROPDOWN -->
+      <div class="dropdown-wrap" style="position:relative;cursor:pointer" onmouseleave="closeDropdown()">
+        <a href="#" onmouseover="openDropdown()" onclick="return false" style="color:var(--crimson);white-space:nowrap;text-decoration:none;font-weight:600;transition:.25s">Registration ▼</a>
+        <div class="dropdown-menu" onmouseover="openDropdown()" onmouseleave="closeDropdown()" style="position:absolute;top:28px;left:-20px;min-width:750px;background:#fff;border:1px solid rgba(166,9,61,.15);border-radius:12px;box-shadow:0 12px 48px rgba(166,9,61,.15);padding:1.2rem;display:none;grid-template-columns:1fr 1fr 1fr;gap:1.4rem;z-index:100">
+          
+          <!-- COL 1 -->
+          <div>
+            <b style="color:var(--crimson);display:block;margin-bottom:.6rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--gold);padding-bottom:.4rem">Beauty Pageants</b>
+            <a href="#" onclick="openFormWithCat(event,'miss-india')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Forever Miss India 2026</a>
+            <a href="#" onclick="openFormWithCat(event,'mrs-india')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Forever Mrs India 2026</a>
+            <a href="#" onclick="openFormWithCat(event,'miss-teen')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Miss Teen India 2026</a>
+            <a href="#" onclick="openFormWithCat(event,'kids')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Star Kids Contest 2026</a>
+            <a href="#" onclick="openFormWithCat(event,'intl')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;transition:.2s">Miss/Mrs Universe 2026</a>
+          </div>
+
+          <!-- COL 2 -->
+          <div>
+            <b style="color:var(--crimson);display:block;margin-bottom:.6rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--gold);padding-bottom:.4rem">Awards 2026</b>
+            <a href="#" onclick="openFormWithCat(event,'super-woman')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Super Woman Award</a>
+            <a href="#" onclick="openFormWithCat(event,'super-hero')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Super Hero Award</a>
+            <a href="#" onclick="openFormWithCat(event,'business')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Business Awards</a>
+            <a href="#" onclick="openFormWithCat(event,'iconic')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Iconic Award</a>
+            <a href="#" onclick="openFormWithCat(event,'bharat')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;transition:.2s">Bharat Ratan Samman</a>
+          </div>
+
+          <!-- COL 3 -->
+          <div>
+            <b style="color:var(--crimson);display:block;margin-bottom:.6rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--gold);padding-bottom:.4rem">Professional & Other</b>
+            <a href="#" onclick="openFormWithCat(event,'designer')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Fashion Designers 2026</a>
+            <a href="#" onclick="openFormWithCat(event,'makeup')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Makeup Artist 2026</a>
+            <a href="partner.html" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.2rem;transition:.2s">Channel Partner</a>
+            <a href="#" onclick="openFormWithCat(event,'nominate')" style="display:block;padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;transition:.2s">Nominate for Award</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="faq.html" style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">FAQ</a>
+      <a href="contact.html" style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">Contact</a>
+      <a href="our-team.html" style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">Our Team</a>
+      <a href="news.html" style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">News</a>
     </nav>
-    <button class="btn" onclick="openForm()">Register Now</button>
+
+    <!-- REGISTER BUTTON -->
+    <button class="btn" onclick="openForm()" style="white-space:nowrap;flex-shrink:0">Register Now</button>
+
+    <!-- HAMBURGER (MOBILE) -->
     <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">☰</button>
   </div>
 </header>
@@ -325,7 +385,7 @@ footer{background:#fff;border-top:1px solid rgba(212,160,76,.2);padding:3.4rem 0
 <section class="hero" id="hero">
   <div id="sparkles"></div>
   <div class="container">
-    <img class="hero-logo" src="https://www.fsia.in/static/media/logo.67ebf64be4454e93587d.gif" alt="FSIA — Forever Star India">
+    <img class="hero-logo" src="logo.gif" alt="FSIA — Forever Star India">
     <h1>India's Biggest <em>Beauty Pageant</em> &amp; Awards Platform</h1>
     <p class="lead">From city auditions to the national crown — your journey to the spotlight starts here.</p>
     <div class="trustline">10,000+ Participants · 4,000+ City Auditions · Winners from Every City</div>
@@ -529,7 +589,7 @@ footer{background:#fff;border-top:1px solid rgba(212,160,76,.2);padding:3.4rem 0
   <div class="container">
     <div class="foot-grid">
       <div>
-        <img src="https://www.fsia.in/static/media/logo.eccd74c2bce3f0785091.png" alt="Forever Star India" style="width:70px;margin-bottom:.8rem">
+        <img src="logo.png" alt="Forever Star India" style="width:70px;margin-bottom:.8rem">
         <h4>Forever Star India</h4>
         <p>India's most unique platform for beauty pageants and award shows — bringing talent from every city to the national stage.</p>
         <div class="socials">
@@ -910,10 +970,20 @@ if(wt && !matchMedia('(prefers-reduced-motion: reduce)').matches){
   },2800);
 }
 
-/* auto-open form when other pages link here with ?register=1 (or ?category=slug) */
+/* auto-open form when arriving with ?register=1 or ?category=slug */
 const params=new URLSearchParams(location.search);
 if(params.get('register')==='1') openForm();
 else if(params.get('category') && CATS[params.get('category')]) openForm(params.get('category'));
+
+/* Dropdown menu toggle (simplified - CSS handles most of it now) */
+function openDropdown(){} /* CSS hover handles this */
+function closeDropdown(){} /* CSS hover handles this */
+
+/* Open form with specific category */
+function openFormWithCat(e,cat){
+  e.preventDefault();
+  openForm(cat);
+}
 </script>
 </body>
 </html>
